@@ -41,7 +41,11 @@
   
   // Primary Type Button Style
   .lucky-btn-primary {
-    @include button-style($primary, $primary, $white)
+    @include button-style($primary, $primary, $white);
+    &:active {
+      box-shadow: 0 0 4px rgba(49, 130, 223, 0.6);
+    }
+    
   }
   
   // Danger Type Button Style
