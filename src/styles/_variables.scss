@@ -85,7 +85,8 @@ $spacer: 1rem !default;
 $paragraph-margin-bottom:   1rem !default;
 
 // 字体其他部分 heading list hr 等等
-$headings-margin-bottom:      $spacer / 2 !default;
+// $headings-margin-bottom:      $spacer / 2 !default;  // $spacer / 2 这种方式已经被弃用了 改用 calc($spacer / 2)
+$headings-margin-bottom:      calc($spacer / 2) !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
@@ -148,7 +149,6 @@ $pre-color:                         null !default;
 $enable-pointer-cursor-for-buttons:           true !default;
 
 // 边框 和 border radius
-
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 

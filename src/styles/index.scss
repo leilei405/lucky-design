@@ -11,8 +11,10 @@
 @import "reboot";
 
 //mixin
-// @import "mixin";
+@import "mixins";
 
 // // animation
-// @import "animation";
+@import "animation";
 
+// Button
+@import "../components/Button/style";
