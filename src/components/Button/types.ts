@@ -30,6 +30,7 @@ interface BaseButtonProps {
 
 // 我想使用type属性，但是它不能使用，所以这里定义一个类型
 // 使用omit方法，把原生type属性去掉
+// 因为我想使用type属性，但是它不能使用，所以这里定义一个类型
 type NativeButtonPropsWithoutType = Omit<
   ButtonHTMLAttributes<HTMLElement>,
   "type"

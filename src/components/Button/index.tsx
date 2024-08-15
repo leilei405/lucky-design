@@ -20,8 +20,6 @@ export const Button: FC<ButtonProps> = (props) => {
     disabled: type === "link" && disabled,
   });
 
-  console.log(classes);
-
   if (type === "link" && href) {
     return (
       <a className={classes} href={href} {...restProps}>
