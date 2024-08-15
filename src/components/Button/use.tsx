@@ -9,7 +9,13 @@ function ButtonCom() {
       <Button style={{ margin: 5 }} type="info" size="large">
         Info
       </Button>
-      <Button style={{ margin: 5 }} type="link" size="large">
+      <Button
+        style={{ margin: 5 }}
+        href="https://www.baidu.com/"
+        target="_blank"
+        type="link"
+        size="large"
+      >
         Link
       </Button>
       <Button style={{ margin: 5 }} type="success" size="large">

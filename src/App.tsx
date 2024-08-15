@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "./components/Button/useButton"; // Button
+import Button from "./components/Button/use"; // Button
+import Alert from "./components/Alert/use";
 function App() {
   return (
     <div
@@ -11,6 +12,7 @@ function App() {
       }}
     >
       <Button />
+      <Alert />
     </div>
   );
 }
