@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import { AlertProps } from "./types";
 
 export const Alert: FC<AlertProps> = (props) => {
-  const [hide, setHide] = useState(false);
+  // const [hide, setHide] = useState(false);
   const {
     title,
     description,
@@ -24,7 +24,7 @@ export const Alert: FC<AlertProps> = (props) => {
     if (onClose) {
       onClose();
     }
-    setHide(true);
+    // setHide(true);
   };
 
   return (
