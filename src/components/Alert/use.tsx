@@ -4,6 +4,7 @@ const AlertCom = () => {
   return (
     <div>
       <Alert title="successTitle" type="success" />
+      <Alert title="times" type="warning" />
     </div>
   );
 };

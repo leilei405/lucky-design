@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import { AlertProps } from "./types";
-
+import Icon from "../Icon";
 export const Alert: FC<AlertProps> = (props) => {
   // const [hide, setHide] = useState(false);
   const {
@@ -33,7 +33,7 @@ export const Alert: FC<AlertProps> = (props) => {
       {description && <p className="lucky-alert-desc">{description}</p>}
       {closable && (
         <span className="lucky-alert-close" onClick={handleClose}>
-          1111
+          <Icon icon="times" />
         </span>
       )}
     </div>
