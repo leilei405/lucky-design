@@ -14,7 +14,7 @@ const testProps: ButtonProps = {
 
 const disabledProps: ButtonProps = {
   disabled: true,
-  onClick: jest.fn(),
+  onClick: jest.fn(), // 模拟点击按钮
 };
 
 describe("测试Button组件", () => {
