@@ -1,4 +1,4 @@
-import React from "react";
+import React, { act } from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Button from ".";
 import { ButtonProps } from "./types";
@@ -32,7 +32,7 @@ describe("测试Button组件", () => {
     const wrapper = render(<Button {...testProps}>Nice</Button>);
     const element = wrapper.getByText("Nice");
     expect(element).toBeInTheDocument();
-    expect(element).toHaveClass("lucky-btn-primary btn-lg klass");
+    expect(element).toHaveClass("lucky-btn-primary lucky-btn-large klass");
   });
   it("当组件的type是link的时候，href被提供的时候，渲染出一个a标签", () => {
     const wrapper = render(

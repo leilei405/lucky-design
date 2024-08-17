@@ -11,6 +11,7 @@ function App() {
         width: "100vw",
       }}
     >
+      <h1>hello world</h1>
       <Button />
       <Alert />
     </div>
