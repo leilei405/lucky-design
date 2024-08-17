@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./components/Button/use"; // Button
 import Alert from "./components/Alert/use";
+import Menu from "./components/Menu/use";
 function App() {
   return (
     <div
@@ -11,9 +12,13 @@ function App() {
         width: "100vw",
       }}
     >
-      <h1>hello world</h1>
+      <h1>Lucky Design</h1>
+      <h5 style={{ textAlign: "center", color: "red" }}>按钮</h5>
       <Button />
+      <h5 style={{ textAlign: "center", color: "red" }}>Alert</h5>
       <Alert />
+      <h5 style={{ textAlign: "center", color: "red" }}>Menu</h5>
+      <Menu />
     </div>
   );
 }

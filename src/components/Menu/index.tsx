@@ -1,7 +1,14 @@
-import React from "react";
+import InternalMenu from "./menu";
+import MenuItem from "./menuitem";
 
-const Menu = () => {
-  return <div>Menu</div>;
-};
+type InternalMenuType = typeof InternalMenu;
+
+interface IMenuInterface extends InternalMenuType {
+  Item: typeof MenuItem;
+}
+
+const Menu = InternalMenu as IMenuInterface;
+
+Menu.Item = MenuItem;
 
 export default Menu;
