@@ -1,16 +1,25 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import classNames from "classnames";
-import { IMenuItemProps } from "./types";
+import { IMenuItemProps, MenuContext } from "./types";
 
 const MenuItem: FC<IMenuItemProps> = (props) => {
-  const { key, className, style, disabled, children } = props || {};
+  const { index, onSelect } = useContext(MenuContext);
+
+  const { activeKey, className, style, disabled, children } = props || {};
 
   const classes = classNames("menu-item", className, {
-    disabled: disabled,
+    isDisabled: disabled,
+    isActive: index === activeKey,
   });
 
+  const handleClick = () => {
+    if (onSelect && !disabled) {
+      onSelect(activeKey);
+    }
+  };
+
   return (
-    <li className={classes} style={style}>
+    <li className={classes} style={style} onClick={handleClick}>
       {children}
     </li>
   );
