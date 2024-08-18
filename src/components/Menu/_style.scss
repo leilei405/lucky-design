@@ -8,31 +8,31 @@
         padding: $menu-item-padding-y $menu-item-padding-x;
         cursor: pointer;
         transition: $menu-transition;
-    }
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
-    &.isDisabled {
-        color: $menu-item-disabled-color;
-        pointer-events: none;
-        cursor: default;
-    }
-    &.isActive, &:hover {
-        color: $menu-item-active-color;
-        border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+        &.isDisabled {
+            color: $menu-item-disabled-color;
+            pointer-events: none;
+            cursor: default;
+        }
+        &.isActive, &:hover {
+            color: $menu-item-active-color;
+            border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        }
     }
 }
 
 .lucky-menu-vertical {
     flex-direction: column;
     border-bottom: 0px;
-    margin: 10px 20px;
     border-right: $menu-border-width solid $menu-border-color;
     .menu-item {
         border-left: $menu-item-active-border-width solid transparent;
         &.isActive, &:hover {
             border-bottom: 0px;
+            margin-left: 0.125rem;
             border-left: $menu-item-active-border-width solid $menu-item-active-color;
         }
     }
