@@ -22,7 +22,7 @@ export interface IMenuProps {
   theme?: MenuTheme;
   className?: string;
   style?: CSSProperties;
-  defaultIndex?: string;
+  defaultIndex?: string | number;
   defaultActive?: string;
   children?: ReactNode;
   onSelect?: SelectCallback;

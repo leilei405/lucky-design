@@ -37,7 +37,12 @@ const Menu: FC<IMenuProps> = (props) => {
   };
 
   return (
-    <ul className={classes} style={style} {...restProps}>
+    <ul
+      className={classes}
+      style={style}
+      data-testid="test-menu"
+      {...restProps}
+    >
       <MenuContext.Provider value={passedContext}>
         {children}
       </MenuContext.Provider>
