@@ -8,25 +8,26 @@ const MenuCom = () => {
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
       <Menu
+        theme="light"
         mode="vertical"
         defaultIndex="0"
         onSelect={(idx) => handleClick(idx)}
       >
-        <MenuItem activeKey={1}>menu1</MenuItem>
+        <MenuItem activeKey={1}>Tab1</MenuItem>
         <MenuItem activeKey={2} disabled>
-          menu2
+          Tab2
         </MenuItem>
-        <MenuItem activeKey={3}>menu3</MenuItem>
-        <MenuItem activeKey={4}>menu4</MenuItem>
+        <MenuItem activeKey={3}>Tab3</MenuItem>
+        <MenuItem activeKey={4}>Tab4</MenuItem>
       </Menu>
 
-      <Menu defaultIndex="0" onSelect={(idx) => handleClick(idx)}>
-        <MenuItem activeKey={1}>menu1</MenuItem>
+      <Menu theme="dark" defaultIndex="0" onSelect={(idx) => handleClick(idx)}>
+        <MenuItem activeKey={1}>Tab1</MenuItem>
         <MenuItem activeKey={2} disabled>
-          menu2
+          Tab2
         </MenuItem>
-        <MenuItem activeKey={3}>menu3</MenuItem>
-        <MenuItem activeKey={4}>menu4</MenuItem>
+        <MenuItem activeKey={3}>Tab3</MenuItem>
+        <MenuItem activeKey={4}>Tab4</MenuItem>
       </Menu>
     </div>
   );

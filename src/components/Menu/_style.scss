@@ -24,6 +24,7 @@
     }
 }
 
+/** 垂直菜单样式 */
 .lucky-menu-vertical {
     flex-direction: column;
     border-bottom: 0px;
@@ -36,4 +37,15 @@
             border-left: $menu-item-active-border-width solid $menu-item-active-color;
         }
     }
+}
+
+
+/** 主题色切换 */ 
+.lucky-menu-light {
+    background-color: $white;
+    color: $black;
+}
+.lucky-menu-dark {
+    background-color: $black;
+    color: $white;
 }
