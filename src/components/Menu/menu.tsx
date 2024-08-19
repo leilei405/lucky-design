@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import classNames from "classnames";
-import { IMenuProps, IMenuContext, MenuContext } from "./types";
+import { IMenuProps, IMenuContext, MenuContext, IMenuItemProps } from "./types";
 
 const Menu: FC<IMenuProps> = (props) => {
   const {
@@ -36,6 +36,23 @@ const Menu: FC<IMenuProps> = (props) => {
     onSelect: handleClick,
   };
 
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement =
+        child as React.FunctionComponentElement<IMenuItemProps>;
+      if (childElement.type.displayName === "MenuItem") {
+        return React.cloneElement(childElement, {
+          activeKey: index,
+        });
+      } else {
+        console.warn(
+          "Warning: [LuckyMenu] Menu can only contain `MenuItem` and `SubMenu` as children."
+        );
+        return null;
+      }
+    });
+  };
+
   return (
     <ul
       className={classes}
@@ -44,7 +61,7 @@ const Menu: FC<IMenuProps> = (props) => {
       {...restProps}
     >
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   );

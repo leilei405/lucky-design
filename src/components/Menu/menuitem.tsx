@@ -13,7 +13,11 @@ const MenuItem: FC<IMenuItemProps> = (props) => {
   });
 
   const handleClick = () => {
-    if (onSelect && !disabled) {
+    if (
+      onSelect &&
+      !disabled &&
+      (typeof activeKey === "number" || typeof activeKey === "string")
+    ) {
       onSelect(activeKey);
     }
   };
@@ -24,5 +28,6 @@ const MenuItem: FC<IMenuItemProps> = (props) => {
     </li>
   );
 };
-
+// displayName 用于在 React DevTools 中显示组件名称 内置的静态类型
+MenuItem.displayName = "MenuItem";
 export default MenuItem;
