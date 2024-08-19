@@ -36,3 +36,12 @@ export interface IMenuItemProps {
   disabled?: boolean;
   children: ReactNode;
 }
+
+/** SubMenu Components Properties */
+export interface ISubMenuProps {
+  title: ReactNode; // 标题自定义
+  subActiveKey?: string | number; // 默认选中第一项
+  className?: string;
+  style?: CSSProperties;
+  children?: ReactNode;
+}

@@ -17,9 +17,27 @@
             pointer-events: none;
             cursor: default;
         }
-        &.is-active, &:hover {
+        &.isActive, &:hover {
             color: $menu-item-active-color;
             border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        }
+    }
+    .submenu-item {
+        position: relative;
+    }
+
+    .lucky-submenus {
+        list-style:none;
+        padding-left: 0;
+        white-space: nowrap;
+        >.menu-item {
+            padding: $menu-item-padding-y $menu-item-padding-x;
+            cursor: pointer;
+            transition: $menu-transition;
+            color: $body-color;
+            &.isActive, &:hover {
+                color: $menu-item-active-color !important;
+            }
         }
     }
 }
@@ -29,7 +47,7 @@
     flex-direction: column;
     border-bottom: 0px;
     border-right: $menu-border-width solid $menu-border-color;
-    .menu-item {
+    >.menu-item {
         border-left: $menu-item-active-border-width solid transparent;
         &.isActive, &:hover {
             border-bottom: 0px;
@@ -39,8 +57,23 @@
     }
 }
 
+/** 水平菜单样式 */
+.lucky-menu-horizontal {
+    >.menu-item {
+      border-bottom: $menu-item-active-border-width solid transparent;
+    }
+    .lucky-submenu {
+      position: absolute;
+      background: $white;
+      z-index: 100;
+      top: calc(100% + 8px);
+      left: 0;
+      border: $menu-border-width solid $menu-border-color;
+      box-shadow: $submenu-box-shadow;
+    }
+}
 
-/** 主题色切换 */ 
+/** 主题色切换 黑白 */ 
 .lucky-menu-light {
     background-color: $white;
     color: $black;

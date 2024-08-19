@@ -19,8 +19,9 @@ const Menu: FC<IMenuProps> = (props) => {
   const [currentActive, setCurrentActive] = useState(defaultIndex);
 
   const classes = classNames("lucky-menu", className, {
-    [`lucky-menu-${mode}`]: mode === "vertical",
-    [`lucky-menu-${theme}`]: theme === "dark",
+    "lucky-menu-vertical": mode === "vertical",
+    "lucky-menu-horizontal": mode !== "vertical",
+    "lucky-menu-dark": theme === "dark",
   });
 
   const handleClick = (idx: string | number) => {
@@ -40,7 +41,11 @@ const Menu: FC<IMenuProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement =
         child as React.FunctionComponentElement<IMenuItemProps>;
-      if (childElement.type.displayName === "MenuItem") {
+      // 判断子元素是否为MenuItem或者SubMenu
+      // 如果是MenuItem或者SubMenu，则进行渲染
+      // 否则，提示错误
+      const { displayName = "" } = childElement.type;
+      if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, {
           activeKey: index,
         });
