@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./components/Button/use"; // Button
 import Alert from "./components/Alert/use";
-import Menu2 from "./components/Menu/use1";
-import Menu1 from "./components/Menu/use2";
+import Menu1 from "./components/Menu/use1";
+import Menu2 from "./components/Menu/use2";
 function App() {
   return (
     <div

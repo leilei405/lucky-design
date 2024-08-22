@@ -12,6 +12,7 @@ export interface IMenuContext {
   index?: number | string;
   onSelect?: SelectCallback;
   mode?: MenuMode;
+  defaultOpenSubMenus?: string[];
 }
 
 /** 给Menu组件添加一个context，用于给子组件传递index和onSelect 默认给选中第一项 */
@@ -27,11 +28,14 @@ export interface IMenuProps {
   defaultActive?: string;
   children?: ReactNode;
   onSelect?: SelectCallback;
+
+  // 默认展开的菜单项
+  defaultOpenSubMenus?: string[];
 }
 
 /** Menu.Item Component Properties */
 export interface IMenuItemProps {
-  activeKey: string | number;
+  activeKey?: string | number;
   className?: string;
   style?: CSSProperties;
   disabled?: boolean;
@@ -41,7 +45,7 @@ export interface IMenuItemProps {
 /** SubMenu Components Properties */
 export interface ISubMenuProps {
   title: ReactNode; // 标题自定义
-  subActiveKey?: string | number; // 默认选中第一项
+  activeKey?: string | number; // 默认选中第一项
   className?: string;
   // style?: CSSProperties;
   children?: ReactNode;

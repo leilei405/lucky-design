@@ -12,6 +12,7 @@ const Menu: FC<IMenuProps> = (props) => {
     className,
     defaultActive,
     defaultIndex = 0,
+    defaultOpenSubMenus = [],
     ...restProps
   } = props || {};
 
@@ -35,7 +36,8 @@ const Menu: FC<IMenuProps> = (props) => {
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
-    mode: mode,
+    mode,
+    defaultOpenSubMenus,
   };
 
   const renderChildren = () => {
@@ -45,7 +47,7 @@ const Menu: FC<IMenuProps> = (props) => {
       // 判断子元素是否为MenuItem或者SubMenu
       // 如果是MenuItem或者SubMenu，则进行渲染
       // 否则，提示错误
-      const { displayName = "" } = childElement.type;
+      const { displayName } = childElement.type;
       if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, {
           activeKey: index,
