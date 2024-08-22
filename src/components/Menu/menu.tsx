@@ -35,6 +35,7 @@ const Menu: FC<IMenuProps> = (props) => {
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
+    mode: mode,
   };
 
   const renderChildren = () => {
