@@ -3,7 +3,10 @@ import Button from "./components/Button/use"; // Button
 import Alert from "./components/Alert/use";
 import Menu1 from "./components/Menu/use1";
 import Menu2 from "./components/Menu/use2";
-import SpaceCom from "./components/Space/use1";
+import Space from "./components/Space/use2";
+
+// 测试
+// import TestCom from "./components/Space/children";
 function App() {
   return (
     <div
@@ -22,7 +25,7 @@ function App() {
       <h5 style={{ textAlign: "center", color: "red" }}>Menu</h5>
       <Menu1 />
       <Menu2 />
-      <SpaceCom />
+      <Space />
     </div>
   );
 }
