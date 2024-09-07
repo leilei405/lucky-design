@@ -7,8 +7,6 @@ interface TestProps {
 function Test(props: TestProps) {
   const children2 = React.Children.toArray(props.children);
 
-  // console.log(props.children);
-  // console.log(children2);
   return <div></div>;
 }
 // 测试提交1111
