@@ -15,6 +15,9 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
 
   // 子项默认展开
   const openDefaultMenu = defaultOpenSubMenus as Array<string | number>; // 可能是undefined的 做一个类型断言
+
+  console.log(openDefaultMenu, "===openDefaultMenu===");
+
   const isOpened =
     activeKey && mode === "vertical"
       ? openDefaultMenu.includes(activeKey)

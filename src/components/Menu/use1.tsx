@@ -11,13 +11,13 @@ const MenuCom = () => {
       mode="vertical"
       defaultIndex="0"
       onSelect={(idx) => handleClick1(idx)}
-      defaultOpenSubMenus={["3"]}
+      defaultOpenSubMenus={["2"]}
     >
       <MenuItem>Tab1</MenuItem>
       <MenuItem disabled>Tab2</MenuItem>
-      <SubMenu title="select">
-        <MenuItem>Tab3</MenuItem>
-        <MenuItem>Tab4</MenuItem>
+      <SubMenu title="Tab3">
+        <MenuItem>Tab3-1</MenuItem>
+        <MenuItem>Tab3-2</MenuItem>
       </SubMenu>
     </Menu>
   );

@@ -5,18 +5,18 @@ type MenuMode = "vertical" | "horizontal";
 /** 菜单主题 light | dark */
 type MenuTheme = "light" | "dark";
 /** SelectCallback */
-type SelectCallback = (key: string | number) => void;
+type SelectCallback = (selectedIndex: string | number) => void;
 
 /** MenuContext 将父组件的一些属性透传给子组件 */
 export interface IMenuContext {
   index?: number | string;
   onSelect?: SelectCallback;
   mode?: MenuMode;
-  defaultOpenSubMenus?: string[];
+  defaultOpenSubMenus?: Array<string | number>;
 }
 
 /** 给Menu组件添加一个context，用于给子组件传递index和onSelect 默认给选中第一项 */
-export const MenuContext = createContext<IMenuContext>({ index: 0 });
+export const MenuContext = createContext<IMenuContext>({ index: "0" });
 
 /** Menu Component Properties */
 export interface IMenuProps {
@@ -30,7 +30,7 @@ export interface IMenuProps {
   onSelect?: SelectCallback;
 
   // 默认展开的菜单项
-  defaultOpenSubMenus?: string[];
+  defaultOpenSubMenus?: Array<string | number>;
 }
 
 /** Menu.Item Component Properties */
@@ -47,6 +47,5 @@ export interface ISubMenuProps {
   title: ReactNode; // 标题自定义
   activeKey?: string | number; // 默认选中第一项
   className?: string;
-  // style?: CSSProperties;
   children?: ReactNode;
 }

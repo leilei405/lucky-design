@@ -11,7 +11,7 @@ const Menu: FC<IMenuProps> = (props) => {
     onSelect,
     className,
     defaultActive,
-    defaultIndex = 0,
+    defaultIndex = "0",
     defaultOpenSubMenus = [],
     ...restProps
   } = props || {};
@@ -34,7 +34,7 @@ const Menu: FC<IMenuProps> = (props) => {
 
   // 需要传递给子组件的context
   const passedContext: IMenuContext = {
-    index: currentActive ? currentActive : 0,
+    index: currentActive ? currentActive : "0",
     onSelect: handleClick,
     mode,
     defaultOpenSubMenus,

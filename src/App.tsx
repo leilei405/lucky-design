@@ -25,7 +25,7 @@ function App() {
       <h5 style={{ textAlign: "center", color: "red" }}>Menu</h5>
       <Menu1 />
       <Menu2 />
-      <Space />
+      {/* <Space /> */}
     </div>
   );
 }
