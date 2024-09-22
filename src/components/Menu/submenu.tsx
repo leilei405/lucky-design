@@ -7,9 +7,9 @@ import React, {
   cloneElement,
 } from "react";
 import classNames from "classnames";
-import { CSSTransition } from "react-transition-group";
 import { ISubMenuProps, MenuContext, IMenuItemProps } from "./types";
 import Icon from "../Icon/icon";
+import Transition from "../Transition/transition";
 
 const SubMenu: FC<ISubMenuProps> = (props) => {
   const { title, index, className, children } = props;
@@ -77,17 +77,9 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
     });
 
     return (
-      <CSSTransition
-        in={menuOpen}
-        timeout={300}
-        classNames={"zoom-in-top"}
-        // 加appear属性表示 第一次可能会是打开的状态
-        appear
-        // 默认为false 是不会有子节点的 为true会动态添加对应的子节点 离开后会进行unmount
-        unmountOnExit
-      >
+      <Transition in={menuOpen} timeout={300} animation="zoom-in-top">
         <ul className={subMenuClasses}>{childrenElement}</ul>
-      </CSSTransition>
+      </Transition>
     );
   };
 
