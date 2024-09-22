@@ -7,6 +7,7 @@ import React, {
   cloneElement,
 } from "react";
 import classNames from "classnames";
+import { CSSTransition } from "react-transition-group";
 import { ISubMenuProps, MenuContext, IMenuItemProps } from "./types";
 import Icon from "../Icon/icon";
 
@@ -75,7 +76,16 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
       }
     });
 
-    return <ul className={subMenuClasses}>{childrenElement}</ul>;
+    return (
+      <CSSTransition
+        in={menuOpen}
+        timeout={300}
+        classNames={"zoom-in-top"}
+        appear
+      >
+        <ul className={subMenuClasses}>{childrenElement}</ul>
+      </CSSTransition>
+    );
   };
 
   return (
