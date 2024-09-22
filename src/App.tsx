@@ -1,8 +1,6 @@
 import React from "react";
-import Tab from "./components/Tab/use";
+import Icon from "./components/Icon/use";
 
-// 测试
-// import TestCom from "./components/Space/children";
 function App() {
   return (
     <div
@@ -14,7 +12,7 @@ function App() {
       }}
     >
       <h1>Lucky Design</h1>
-      <Tab />
+      <Icon />
     </div>
   );
 }
