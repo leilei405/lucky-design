@@ -1,9 +1,9 @@
-import React from "react";
-import Icon from "./components/Icon/use";
-import Menu1 from "./components/Menu/use1";
-import Menu2 from "./components/Menu/use2";
+import React, { useState } from "react";
+import Transition from "./components/Transition/transition";
+import Button from "./components/Button";
 
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <div
       style={{
@@ -14,9 +14,24 @@ function App() {
       }}
     >
       <h1>Lucky Design</h1>
-      <Icon />
-      <Menu2 />
-      <Menu1 />
+      <Button onClick={() => setShow(!show)}>Toggle</Button>
+      <Transition in={show} timeout={300} animation="zoom-in-top">
+        <div>
+          <p>1111111111</p>
+          <p>3333333333</p>
+          <p>4444444444</p>
+          <p>5555555555</p>
+          <p>6666666666</p>
+          <p>7777777777</p>
+          <p>8888888888</p>
+          <p>9999999999</p>
+        </div>
+      </Transition>
+      <Transition wrapper in={show} timeout={300} animation="zoom-in-top">
+        <div>
+          <Button>234512</Button>
+        </div>
+      </Transition>
     </div>
   );
 }

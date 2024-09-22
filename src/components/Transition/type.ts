@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 
 type AnimationName =
@@ -8,4 +9,6 @@ type AnimationName =
 
 export type TransitionProps = {
   animation?: AnimationName;
+  children: ReactNode;
+  wrapper?: boolean;
 } & CSSTransitionProps;

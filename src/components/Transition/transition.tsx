@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { CSSTransition } from "react-transition-group";
 import { TransitionProps } from "./type";
 
@@ -9,6 +9,7 @@ const Transition: FC<TransitionProps> = (props) => {
     animation,
     unmountOnExit,
     appear,
+    wrapper,
     ...resetProps
   } = props;
   return (
@@ -20,7 +21,7 @@ const Transition: FC<TransitionProps> = (props) => {
       unmountOnExit
       {...resetProps}
     >
-      {children}
+      {wrapper ? <div>{children}</div> : children}
     </CSSTransition>
   );
 };
