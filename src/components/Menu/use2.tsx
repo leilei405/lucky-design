@@ -4,7 +4,7 @@ import MenuItem from "./menuitem";
 
 const MenuCom = () => {
   const handleClick2 = (idx: string | number) => {
-    console.log("click", idx);
+    console.log("currentIndex", idx);
   };
   return (
     <Menu
@@ -13,10 +13,12 @@ const MenuCom = () => {
       onSelect={(idx) => handleClick2(idx)}
     >
       <MenuItem>Tab1</MenuItem>
-      <MenuItem disabled>Tab2</MenuItem>
-      <SubMenu title="select">
-        <MenuItem>Tab3</MenuItem>
-        <MenuItem>Tab4</MenuItem>
+      <MenuItem>Tab2</MenuItem>
+      <MenuItem>Tab3</MenuItem>
+      <MenuItem disabled>Tab4</MenuItem>
+      <SubMenu title="Tab5">
+        <MenuItem>Tab5-1</MenuItem>
+        <MenuItem>Tab5-2</MenuItem>
       </SubMenu>
     </Menu>
   );

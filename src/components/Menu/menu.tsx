@@ -25,9 +25,9 @@ const Menu: FC<IMenuProps> = (props) => {
     "lucky-menu-dark": theme === "dark",
   });
 
-  const handleClick = (idx: string | number) => {
+  const handleClick = (idx: string) => {
     setCurrentActive(idx);
-    if (typeof onSelect === "function") {
+    if (typeof onSelect === "function" && onSelect) {
       onSelect(idx);
     }
   };
@@ -50,7 +50,7 @@ const Menu: FC<IMenuProps> = (props) => {
       const { displayName } = childElement.type;
       if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, {
-          activeKey: index,
+          index: index.toString(),
         });
       } else {
         console.warn(

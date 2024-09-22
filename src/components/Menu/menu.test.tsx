@@ -17,17 +17,17 @@ const testProps: IMenuProps = {
 };
 
 const testVerProps: IMenuProps = {
-  defaultIndex: 0,
+  defaultIndex: "0",
   mode: "vertical",
 };
 const generateMenu = (props: IMenuProps) => {
   return (
     <Menu {...props}>
-      <MenuItem activeKey={0}>Tab1</MenuItem>
-      <MenuItem activeKey={1} disabled>
+      <MenuItem index={"0"}>Tab1</MenuItem>
+      <MenuItem index={"1"} disabled>
         Tab2Disabled
       </MenuItem>
-      <MenuItem activeKey={2}>test</MenuItem>
+      <MenuItem index={"2"}>test</MenuItem>
     </Menu>
   );
 };

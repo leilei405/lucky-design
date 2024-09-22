@@ -3,22 +3,18 @@ import classNames from "classnames";
 import { IMenuItemProps, MenuContext } from "./types";
 
 const MenuItem: FC<IMenuItemProps> = (props) => {
-  const { index, onSelect } = useContext(MenuContext);
+  const context = useContext(MenuContext);
 
-  const { activeKey, className, style, disabled, children } = props || {};
+  const { index, className, style, disabled, children } = props || {};
 
   const classes = classNames("menu-item", className, {
     isDisabled: disabled,
-    isActive: index === activeKey,
+    isActive: context.index === index,
   });
 
   const handleClick = () => {
-    if (
-      onSelect &&
-      !disabled &&
-      (typeof activeKey === "number" || typeof activeKey === "string")
-    ) {
-      onSelect(activeKey);
+    if (context.onSelect && !disabled && typeof index === "string") {
+      context.onSelect(index);
     }
   };
 

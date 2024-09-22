@@ -10,17 +10,16 @@ import classNames from "classnames";
 import { ISubMenuProps, MenuContext, IMenuItemProps } from "./types";
 
 const SubMenu: FC<ISubMenuProps> = (props) => {
-  const { title, activeKey, className, children } = props;
-  const { index, mode, defaultOpenSubMenus } = useContext(MenuContext);
+  const { title, index, className, children } = props;
+  // const { index, mode, defaultOpenSubMenus } = useContext(MenuContext);
+  const context = useContext(MenuContext);
 
   // 子项默认展开
-  const openDefaultMenu = defaultOpenSubMenus as Array<string | number>; // 可能是undefined的 做一个类型断言
-
-  console.log(openDefaultMenu, "===openDefaultMenu===");
+  const openDefaultMenu = context.defaultOpenSubMenus as Array<string | number>; // 可能是undefined的 做一个类型断言
 
   const isOpened =
-    activeKey && mode === "vertical"
-      ? openDefaultMenu.includes(activeKey)
+    index && context.mode === "vertical"
+      ? openDefaultMenu.includes(index)
       : false;
 
   const [menuOpen, setMenuOpen] = useState(isOpened);
@@ -29,7 +28,7 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
   let timer: any;
 
   const classes = classNames("menu-item submenu-item", className, {
-    isActive: index === activeKey,
+    isActive: context.index === index,
   });
 
   const handleMouse = (e: MouseEvent, toggle: boolean) => {
@@ -45,8 +44,9 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
     setMenuOpen(!menuOpen);
   };
 
-  const clickEvents = mode === "vertical" ? { onClick: handleClick } : {};
-  const hoverEvents = mode !== "vertical" && {
+  const clickEvents =
+    context.mode === "vertical" ? { onClick: handleClick } : {};
+  const hoverEvents = context.mode !== "vertical" && {
     onMouseEnter: (e: MouseEvent) => {
       handleMouse(e, true);
     },
@@ -60,11 +60,11 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
       "menu-opened": menuOpen,
     });
 
-    const childrenElement = React.Children.map(children, (child, index) => {
+    const childrenElement = React.Children.map(children, (child, i) => {
       const childElement = child as FunctionComponentElement<IMenuItemProps>;
       if (childElement.type.displayName === "MenuItem") {
         return cloneElement(childElement, {
-          activeKey: `${activeKey}-${index}`,
+          index: `${index}-${i}`,
         });
       } else {
         console.warn("submenu only accept MenuItem as children");
@@ -76,7 +76,7 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
   };
 
   return (
-    <li key={activeKey} className={classes} {...hoverEvents}>
+    <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
       </div>
