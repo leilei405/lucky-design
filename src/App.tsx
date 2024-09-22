@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "./components/Icon/use";
-import Menu from "./components/Menu/use1";
+import Menu1 from "./components/Menu/use1";
+import Menu2 from "./components/Menu/use2";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
     >
       <h1>Lucky Design</h1>
       <Icon />
-      <Menu />
+      <Menu2 />
+      <Menu1 />
     </div>
   );
 }

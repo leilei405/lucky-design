@@ -81,7 +81,10 @@ const SubMenu: FC<ISubMenuProps> = (props) => {
         in={menuOpen}
         timeout={300}
         classNames={"zoom-in-top"}
+        // 加appear属性表示 第一次可能会是打开的状态
         appear
+        // 默认为false 是不会有子节点的 为true会动态添加对应的子节点 离开后会进行unmount
+        unmountOnExit
       >
         <ul className={subMenuClasses}>{childrenElement}</ul>
       </CSSTransition>
