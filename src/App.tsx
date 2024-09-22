@@ -1,6 +1,5 @@
 import React from "react";
-import Menu1 from "./components/Menu/use1";
-import Menu2 from "./components/Menu/use2";
+import Tab from "./components/Tab/use";
 
 // 测试
 // import TestCom from "./components/Space/children";
@@ -15,9 +14,7 @@ function App() {
       }}
     >
       <h1>Lucky Design</h1>
-      <Menu1 />
-      <hr />
-      <Menu2 />
+      <Tab />
     </div>
   );
 }
