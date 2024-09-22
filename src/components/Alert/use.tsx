@@ -1,4 +1,4 @@
-import Alert from ".";
+import Alert from "./alert";
 
 const AlertCom = () => {
   return (

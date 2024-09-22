@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Transition from "./components/Transition/transition";
 import Button from "./components/Button";
+import Alert from "./components/Alert/alert";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -32,6 +33,8 @@ function App() {
           <Button>234512</Button>
         </div>
       </Transition>
+
+      <Alert title="1111111111111" />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 // import { config } from "react-transition-group";
 import { render, fireEvent } from "@testing-library/react";
 
-import Alert from ".";
+import Alert from "./alert";
 import { AlertProps } from "./types";
 
 // config.disabled = true;
