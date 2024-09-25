@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Menu from "./menu";
 import MenuItem from "./menuitem";
 import SubMenu from "./submenu";
+import { JSX } from "react/jsx-runtime";
+import { IMenuProps } from "./types";
 
 const meta = {
   title: "Lucky-Design/Menu",
@@ -19,9 +21,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultMenu: Story = () => {
+type ArgsProps = JSX.IntrinsicAttributes & IMenuProps;
+
+export const DefaultMenu: Story = (args: ArgsProps) => {
   return (
-    <Menu>
+    <Menu {...args}>
       <MenuItem>菜单一</MenuItem>
       <MenuItem>菜单二</MenuItem>
       <MenuItem>菜单三</MenuItem>
@@ -29,24 +33,9 @@ export const DefaultMenu: Story = () => {
   );
 };
 
-export const HorizontalMenu: Story = () => {
+export const HorizontalMenu: Story = (args: ArgsProps) => {
   return (
-    <Menu mode="horizontal">
-      <MenuItem>菜单一</MenuItem>
-      <MenuItem>菜单二</MenuItem>
-      <MenuItem>菜单三</MenuItem>
-      <SubMenu title="菜单四">
-        <MenuItem>4-1</MenuItem>
-        <MenuItem>4-2</MenuItem>
-        <MenuItem>4-3</MenuItem>
-      </SubMenu>
-    </Menu>
-  );
-};
-
-export const VerticalMenu: Story = () => {
-  return (
-    <Menu mode="vertical" defaultOpenSubMenus={["3"]}>
+    <Menu {...args} mode="horizontal">
       <MenuItem>菜单一</MenuItem>
       <MenuItem>菜单二</MenuItem>
       <MenuItem>菜单三</MenuItem>
@@ -59,9 +48,24 @@ export const VerticalMenu: Story = () => {
   );
 };
 
-export const DarkMenu: Story = () => {
+export const VerticalMenu: Story = (args: ArgsProps) => {
   return (
-    <Menu theme="dark">
+    <Menu {...args} mode="vertical" defaultOpenSubMenus={["3"]}>
+      <MenuItem>菜单一</MenuItem>
+      <MenuItem>菜单二</MenuItem>
+      <MenuItem>菜单三</MenuItem>
+      <SubMenu title="菜单四">
+        <MenuItem>4-1</MenuItem>
+        <MenuItem>4-2</MenuItem>
+        <MenuItem>4-3</MenuItem>
+      </SubMenu>
+    </Menu>
+  );
+};
+
+export const DarkMenu: Story = (args: ArgsProps) => {
+  return (
+    <Menu {...args} theme="dark">
       <MenuItem>菜单一</MenuItem>
       <MenuItem>菜单二</MenuItem>
       <MenuItem>菜单三</MenuItem>
@@ -69,9 +73,9 @@ export const DarkMenu: Story = () => {
   );
 };
 
-export const LightMenu: Story = () => {
+export const LightMenu: Story = (args: ArgsProps) => {
   return (
-    <Menu theme="light">
+    <Menu {...args} theme="light">
       <MenuItem>菜单一</MenuItem>
       <MenuItem>菜单二</MenuItem>
       <MenuItem>菜单三</MenuItem>
