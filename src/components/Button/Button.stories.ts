@@ -7,7 +7,7 @@ const meta = {
   title: "Lucky-Design/Button",
   component: Button,
   parameters: {
-    layout: "centered", // centered | fullscreen | padded
+    layout: "padded", // centered | fullscreen | padded
   },
   tags: ["!autodocs"], // autodocs | !autodocs  使用 & 禁用
   argTypes: {
@@ -91,3 +91,14 @@ export const Dark: Story = {
     children: "Dark",
   },
 };
+
+Default.storyName = "默认按钮";
+Primary.storyName = "主要按钮";
+Success.storyName = "成功按钮";
+Danger.storyName = "危险按钮";
+Link.storyName = "跳转按钮";
+Secondary.storyName = "次要按钮";
+Info.storyName = "信息按钮";
+Warning.storyName = "告警按钮";
+Light.storyName = "亮色按钮";
+Dark.storyName = "暗色按钮";

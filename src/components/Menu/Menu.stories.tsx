@@ -9,6 +9,7 @@ const meta = {
   component: Menu,
   parameters: {
     layout: "padded", // centered | fullscreen | padded
+    backgrounds: {},
   },
   tags: ["!autodocs"], // autodocs | !autodocs  使用 & 禁用
   argTypes: {},
@@ -18,7 +19,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultMenu = () => {
+export const DefaultMenu: Story = () => {
   return (
     <Menu>
       <MenuItem>菜单一</MenuItem>
@@ -28,7 +29,7 @@ export const DefaultMenu = () => {
   );
 };
 
-export const HorizontalMenu = () => {
+export const HorizontalMenu: Story = () => {
   return (
     <Menu mode="horizontal">
       <MenuItem>菜单一</MenuItem>
@@ -43,7 +44,7 @@ export const HorizontalMenu = () => {
   );
 };
 
-export const VerticalMenu = () => {
+export const VerticalMenu: Story = () => {
   return (
     <Menu mode="vertical" defaultOpenSubMenus={["3"]}>
       <MenuItem>菜单一</MenuItem>
@@ -58,7 +59,7 @@ export const VerticalMenu = () => {
   );
 };
 
-export const DarkMenu = () => {
+export const DarkMenu: Story = () => {
   return (
     <Menu theme="dark">
       <MenuItem>菜单一</MenuItem>
@@ -68,7 +69,7 @@ export const DarkMenu = () => {
   );
 };
 
-export const LightMenu = () => {
+export const LightMenu: Story = () => {
   return (
     <Menu theme="light">
       <MenuItem>菜单一</MenuItem>
@@ -77,3 +78,9 @@ export const LightMenu = () => {
     </Menu>
   );
 };
+
+DefaultMenu.storyName = "默认菜单";
+HorizontalMenu.storyName = "横向菜单";
+VerticalMenu.storyName = "纵向菜单";
+DarkMenu.storyName = "暗色菜单";
+LightMenu.storyName = "亮色菜单";

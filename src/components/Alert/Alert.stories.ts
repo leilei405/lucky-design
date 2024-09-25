@@ -23,6 +23,7 @@ export const Default: Story = {
     description: "desc",
   },
 };
+Default.storyName = "默认提示";
 
 export const Success: Story = {
   args: {
@@ -31,6 +32,7 @@ export const Success: Story = {
     description: "desc",
   },
 };
+Success.storyName = "成功提示";
 
 export const Warning: Story = {
   args: {
@@ -39,6 +41,7 @@ export const Warning: Story = {
     description: "desc",
   },
 };
+Warning.storyName = "告警提示";
 
 export const Danger: Story = {
   args: {
@@ -47,3 +50,4 @@ export const Danger: Story = {
     description: "desc",
   },
 };
+Danger.storyName = "危险提示";
