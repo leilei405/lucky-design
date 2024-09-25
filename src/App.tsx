@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Transition from "./components/Transition/transition";
-import Button from "./components/Button";
+import Button from "./components/Button/button";
 import Alert from "./components/Alert/alert";
 
 function App() {
