@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { JSX } from "react/jsx-runtime";
 
 import Button from "./button";
 import { ButtonProps } from "./types";
@@ -12,8 +11,36 @@ const meta = {
     layout: "padded", // centered | fullscreen | padded
   },
   tags: ["autodocs"], // autodocs | !autodocs  使用 & 禁用
-  argTypes: {},
-  args: { onClick: fn() },
+  argTypes: {
+    type: {
+      options: [
+        "default",
+        "primary",
+        "link",
+        "danger",
+        "info",
+        "light",
+        "dark",
+        "warning",
+        "secondary",
+      ],
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: ["small", "large"],
+      control: {
+        type: "radio",
+      },
+    },
+  },
+  args: {
+    type: "default",
+    size: "small",
+    disabled: false,
+    onClick: fn(),
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -21,93 +48,54 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { type: "default", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="default">
-      Default
-    </Button>
-  ),
+  args: { type: "default" },
+  render: (args: ButtonProps) => <Button {...args}>Default</Button>,
 };
 
 export const Primary: Story = {
-  args: { type: "primary", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="primary">
-      Primary
-    </Button>
-  ),
+  args: { type: "primary" },
+  render: (args: ButtonProps) => <Button {...args}>Primary</Button>,
 };
 
 export const Success: Story = {
-  args: { type: "success", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="success">
-      Success
-    </Button>
-  ),
+  args: { type: "success" },
+  render: (args: ButtonProps) => <Button {...args}>Success</Button>,
 };
 
 export const Danger: Story = {
-  args: { type: "danger", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="danger">
-      Danger
-    </Button>
-  ),
+  args: { type: "danger" },
+  render: (args: ButtonProps) => <Button {...args}>Danger</Button>,
 };
 
 export const Link: Story = {
-  args: { type: "link", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="link">
-      Link
-    </Button>
-  ),
+  args: { type: "link", href: "https://www.baidu.com/" },
+  render: (args: ButtonProps) => <Button {...args}>Link</Button>,
 };
 
 export const Secondary: Story = {
-  args: { type: "secondary", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="secondary">
-      Secondary
-    </Button>
-  ),
+  args: { type: "secondary" },
+
+  render: (args: ButtonProps) => <Button {...args}>Secondary</Button>,
 };
 
 export const Info: Story = {
-  args: { type: "info", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="info">
-      Info
-    </Button>
-  ),
+  args: { type: "info" },
+  render: (args: ButtonProps) => <Button {...args}>Info</Button>,
 };
 
 export const Warning: Story = {
-  args: { type: "warning", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="warning">
-      Warning
-    </Button>
-  ),
+  args: { type: "warning" },
+  render: (args: ButtonProps) => <Button {...args}>Warning</Button>,
 };
 
 export const Light: Story = {
-  args: { type: "light", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="light">
-      Light
-    </Button>
-  ),
+  args: { type: "light" },
+  render: (args: ButtonProps) => <Button {...args}>Light</Button>,
 };
 
 export const Dark: Story = {
-  args: { type: "dark", disabled: false, size: "small" },
-  render: (args: ButtonProps) => (
-    <Button {...args} type="dark">
-      Dark
-    </Button>
-  ),
+  args: { type: "dark" },
+  render: (args: ButtonProps) => <Button {...args}>Dark</Button>,
 };
 
 Default.storyName = "默认按钮";

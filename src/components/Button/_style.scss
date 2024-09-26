@@ -25,12 +25,12 @@
   }
   
   // 小按钮样式
-  .btn-small {
+  .lucky-btn-small {
     @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
   }
   
   // 大按钮样式
-  .btn-large {
+  .lucky-btn-large {
     @include button-size($btn-padding-y-lg, $btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg);
   }
   
