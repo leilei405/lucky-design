@@ -13,7 +13,7 @@ const meta = {
     layout: "padded", // centered | fullscreen | padded
     backgrounds: {},
   },
-  tags: ["!autodocs"], // autodocs | !autodocs  使用 & 禁用
+  tags: ["autodocs"], // autodocs | !autodocs  使用 & 禁用
   argTypes: {},
   args: {},
 } satisfies Meta<typeof Menu>;
