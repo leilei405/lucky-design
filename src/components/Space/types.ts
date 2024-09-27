@@ -30,4 +30,5 @@ export interface ConfigContextType {
     size?: SizeType;
   };
 }
+
 export const ConfigContext = React.createContext<ConfigContextType>({});

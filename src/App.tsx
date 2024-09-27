@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Transition from "./components/Transition/transition";
 import Button from "./components/Button/button";
 import Alert from "./components/Alert/alert";
+import Space from "./components/Space/use";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -35,6 +36,8 @@ function App() {
       </Transition>
 
       <Alert title="1111111111111" />
+
+      <Space />
     </div>
   );
 }
