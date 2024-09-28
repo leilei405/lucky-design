@@ -3,6 +3,7 @@ import Transition from "./components/Transition/transition";
 import Button from "./components/Button/button";
 import Alert from "./components/Alert/alert";
 import Space from "./components/Space/use";
+import Message from "./components/Message/use";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -22,11 +23,6 @@ function App() {
           <p>1111111111</p>
           <p>3333333333</p>
           <p>4444444444</p>
-          <p>5555555555</p>
-          <p>6666666666</p>
-          <p>7777777777</p>
-          <p>8888888888</p>
-          <p>9999999999111</p>
         </div>
       </Transition>
       <Transition wrapper in={show} timeout={300} animation="zoom-in-top">
@@ -38,6 +34,9 @@ function App() {
       <Alert title="1111111111111" />
 
       <Space />
+
+      <hr />
+      <Message />
     </div>
   );
 }

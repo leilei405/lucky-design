@@ -1,6 +1,7 @@
 import React, {
   Children,
   FC,
+  Fragment,
   PropsWithChildren,
   useContext,
   useMemo,
@@ -63,7 +64,7 @@ const Space: FC<SpaceProps> = (props) => {
   const nodes = childNodes.map((child: any, i) => {
     const key = (child && child.key) || `space-item-${i}`;
     return (
-      <>
+      <Fragment key={i}>
         <div className="space-item" key={key}>
           {child}
         </div>
@@ -72,7 +73,7 @@ const Space: FC<SpaceProps> = (props) => {
             {split}
           </span>
         )}
-      </>
+      </Fragment>
     );
   });
 
