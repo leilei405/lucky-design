@@ -1,0 +1,75 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { FC, useCallback, useEffect, useRef } from "react";
+import { WatermarkProps } from "./type";
+import { useWatermark } from './hooks'
+const WaterMark: FC<WatermarkProps> = (props) => {
+  const {
+    zIndex,
+    style,
+    className,
+    image,
+    width,
+    height,
+    rotate,
+    content,
+    fontStyle,
+    gap,
+    offset,
+  } = props;
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // getContainer默认用containerRef.current，或者传入的 props.getContainer。
+  const getContainer = useCallback(() => {
+    return props.getContainer ? props.getContainer() : containerRef.current!;
+  }, [containerRef.current, props.getContainer]);
+
+  // 调用useWatermark，返回generateWatermark 方法。
+  // 然后当参数变化的时候，重新调用generateWatermark 绘制水印。
+  // getContainer我们加了useCallback避免每次都变，对象参数（fontSize）
+  // 数组参数（gap、offset）用 JSON.stringify 序列化后再放到 deps 数组里
+  const { generateWatermark } = useWatermark({
+    zIndex,
+    width,
+    height,
+    rotate,
+    image,
+    content,
+    fontStyle,
+    gap,
+    offset,
+    getContainer,
+  });
+
+  useEffect(() => {
+    generateWatermark({
+      zIndex,
+      width,
+      height,
+      rotate,
+      image,
+      content,
+      fontStyle,
+      gap,
+      offset,
+      getContainer,
+    });
+  }, [
+    zIndex,
+    width,
+    height,
+    rotate,
+    image,
+    content,
+    JSON.stringify(props.fontStyle),
+    JSON.stringify(props.gap),
+    JSON.stringify(props.offset),
+    getContainer,
+  ]);
+
+  return props.children ? (
+    <div className="" style={style} ref={containerRef}></div>
+  ) : null;
+};
+
+export default WaterMark;
