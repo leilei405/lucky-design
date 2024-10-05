@@ -4,6 +4,7 @@ import Button from "./components/Button/button";
 import Alert from "./components/Alert/alert";
 import Space from "./components/Space/use";
 import Message from "./components/Message/use";
+import WaterMark from "./components/Watermark/use";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -31,12 +32,15 @@ function App() {
         </div>
       </Transition>
 
-      <Alert title="1111111111111" />
+      <Alert title="11111" />
 
       <Space />
 
       <hr />
       <Message />
+
+      <hr />
+      <WaterMark />
     </div>
   );
 }

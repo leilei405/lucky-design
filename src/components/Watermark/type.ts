@@ -2,11 +2,11 @@
  * @Author: leilei405 1601178425@qq.com
  * @Date: 2024-10-03 20:55:21
  * @LastEditors: leilei405 1601178425@qq.com
- * @LastEditTime: 2024-10-03 20:55:28
+ * @LastEditTime: 2024-10-05 22:10:04
  * @FilePath: \lucky-design\src\components\Watermark\type.ts
  */
 
-import { CSSProperties, PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren, ReactNode } from "react";
 
 export interface WatermarkProps extends PropsWithChildren {
   style?: CSSProperties;
@@ -26,4 +26,5 @@ export interface WatermarkProps extends PropsWithChildren {
   gap?: [number, number];
   offset?: [number, number];
   getContainer?: () => HTMLElement;
+  children: ReactNode;
 }

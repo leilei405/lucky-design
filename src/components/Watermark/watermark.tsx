@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useCallback, useEffect, useRef } from "react";
 import { WatermarkProps } from "./type";
-import { useWatermark } from './hooks'
+import { useWatermark } from "./hooks";
 const WaterMark: FC<WatermarkProps> = (props) => {
   const {
     zIndex,
@@ -15,6 +15,7 @@ const WaterMark: FC<WatermarkProps> = (props) => {
     fontStyle,
     gap,
     offset,
+    children,
   } = props;
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,7 +69,9 @@ const WaterMark: FC<WatermarkProps> = (props) => {
   ]);
 
   return props.children ? (
-    <div className="" style={style} ref={containerRef}></div>
+    <div className={className} style={style} ref={containerRef}>
+      {children}
+    </div>
   ) : null;
 };
 
