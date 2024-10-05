@@ -5,46 +5,25 @@ const App = () => {
     <Watermark content={["测试水印", "Lucky"]}>
       <div style={{ height: 800 }}>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod
-          deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos
-          recusandae minus, eaque, harum exercitationem esse sapiente? Eveniet,
-          id provident!
+          L不定积分白及颗粒没出门上课节奏VB女神泪看不见女博士看见了比较快女厕看不见
         </p>
       </div>
     </Watermark>
