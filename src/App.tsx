@@ -5,6 +5,7 @@ import Alert from "./components/Alert/alert";
 import Space from "./components/Space/use";
 import Message from "./components/Message/use";
 import WaterMark from "./components/Watermark/use";
+import Popover from "./components/Popover/popver";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -41,6 +42,9 @@ function App() {
 
       <hr />
       <WaterMark />
+
+      <hr />
+      <Popover />
     </div>
   );
 }
